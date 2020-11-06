@@ -1,12 +1,18 @@
-$(document).ready(function() {
-    $(window).scroll(function() {
-        if(this.scrollY > 20)
-        $(".navbar").addClass("sticky");
-        else
-        $(".navbar").removeClass("sticky");
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if (this.scrollY > 20) {
+            $(".navbar").addClass("sticky");
+            $(".goTop").fadeIn();
+        }
+        else {
+            $(".navbar").removeClass("sticky");
+            $(".goTop").fadeOut();
+        }
     });
 
-    $('.menu-toggler').click(function() {
+    $(".goTop").click(function(){scroll(0,0)});
+
+    $('.menu-toggler').click(function () {
         $(this).toggleClass("active");
         $(".navbar-menu").toggleClass("active");
     });
@@ -14,7 +20,7 @@ $(document).ready(function() {
     $('.works').magnificPopup({
         delegate: 'a',
         type: 'image',
-        gallery: {enabled:true}
+        gallery: { enabled: true }
 
     });
 });
